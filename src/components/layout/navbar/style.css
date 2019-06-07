@@ -1,0 +1,13 @@
+nav {
+    background-Color:   ;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    height:64px;
+    border-bottom:solid 1px rgb(221, 221, 221);
+    margin-top:65px;
+    /* color:rgb(255, 31, 98); */
+}
+/* font-family: 'Indie Flower', cursive; */
