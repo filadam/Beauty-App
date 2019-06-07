@@ -14,6 +14,7 @@ import './style.css'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    backgroundColor:"black",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -37,7 +38,7 @@ const styledLogo = {
   fontFamily: 'Galada',
   fontWeight: 'Bold',
   fontSize: '30px',
-  color: 'rgb(255, 31, 98)'
+  // color: 'rgb(255, 31, 98)'
 }
 
 export default function Navbar() {
@@ -46,11 +47,11 @@ export default function Navbar() {
   return (
     <div className={classes.root}>
       
-      <AppBar position="fixed">
+      <AppBar style={{color:"black"}} position="fixed">
       <PageLoading position="fixed"/>
         <Toolbar style={{boxShadow: "none"}}>
           <SimpleMenu style={{boxShadow: "none"}}/>
-          <Typography style={styledLogo} variant="h6" className={classes.title}>
+          <Typography style={styledLogo} variant="h6" className={classes.title} id="logo">
             Beauty App
           </Typography>
           <Button color="inherit">Login</Button>

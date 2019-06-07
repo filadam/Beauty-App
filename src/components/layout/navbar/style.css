@@ -1,5 +1,5 @@
 nav {
-    background-Color:   ;
+    background-Color:black;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -9,5 +9,11 @@ nav {
     border-bottom:solid 1px rgb(221, 221, 221);
     margin-top:65px;
     /* color:rgb(255, 31, 98); */
+}
+#logo {
+    background-image: url('https://media-public.canva.com/MAC6nELjDIw/1/thumbnail_large.jpg');
+    background-clip: text;
+-webkit-background-clip: text;
+color: transparent
 }
 /* font-family: 'Indie Flower', cursive; */
