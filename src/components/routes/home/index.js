@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBox from '../../layout/searchbox/index'
 const containerStyle = {
-    backgroundColor: "black",
+    backgroundColor: "#white",
     height:"1000px",
     display:"flex",
     justifyContent:"center",

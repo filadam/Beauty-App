@@ -1,11 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import "./style.css"
 const divStyle = {
 }
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    colorSecondary: 'linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)',
+  },
+  colorSecondary: {
+    Color: '#b2dfdb',
   },
 });
 
@@ -32,7 +37,7 @@ export default function PageLoading() {
 
   return (
     <div style={divStyle} className={classes.root}>
-      <LinearProgress color={{color:"rgb(255, 31, 98)", backgroundColor:"white", position:"absolute"}} variant="determinate" value={completed} />
+      <LinearProgress style={{background: 'white'}} color="secondary" variant="determinate" value={completed} />
     </div>
   );
 }

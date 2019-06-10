@@ -14,11 +14,11 @@ import './style.css'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor:"black",
+    backgroundColor:"white",
+    boxShadow:"0 0 0 0",
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    boxShadow: "none",
   },
   title: {
     flexGrow: 1,
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const styledLink = {
-  color: "rgb(170, 170, 170)",
+  color: "black",
   textDecoration: "none",
   padding: "30px",
 }
@@ -38,6 +38,7 @@ const styledLogo = {
   fontFamily: 'Galada',
   fontWeight: 'Bold',
   fontSize: '30px',
+  
   // color: 'rgb(255, 31, 98)'
 }
 
@@ -47,23 +48,18 @@ export default function Navbar() {
   return (
     <div className={classes.root}>
       
-      <AppBar style={{color:"black"}} position="fixed">
-      <PageLoading position="fixed"/>
-        <Toolbar style={{boxShadow: "none"}}>
-          <SimpleMenu style={{boxShadow: "none"}}/>
+      <AppBar position="fixed">
+              <Toolbar >
+          <SimpleMenu />
           <Typography style={styledLogo} variant="h6" className={classes.title} id="logo">
             Beauty App
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="white">Login</Button>
         </Toolbar>
+        <PageLoading position="fixed"/>
       </AppBar>
-      {/* lower appbar */}
-      <nav class="containerfluid">
-        <Link style={styledLink} to="/about">Fryzjer</Link>
-        <Link style={styledLink} to="/about">Barber</Link>
-        <Link style={styledLink} to="/about">Paznokcie</Link>
-        <Link style={styledLink} to="/about">Makijaż</Link>
-      </nav>
+      
+      {/* lower appbar */}     
     </div>
   );
 }

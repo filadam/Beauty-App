@@ -26,10 +26,20 @@ const useStyles = makeStyles({
   },
 });
 
+const divStyle = {
+  background: "linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)",
+  width:610,
+  height: 80,
+  borderRadius: "5px 5px",
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
 export default function SearchBox() {
   const classes = useStyles();
 
   return (
+    <div style={divStyle}>
     <Paper className={classes.root}>
       <InputBase
         className={classes.input}
@@ -40,5 +50,6 @@ export default function SearchBox() {
         <SearchIcon />
       </IconButton>
     </Paper>
+    </div>
   );
 }
