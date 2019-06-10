@@ -38,8 +38,6 @@ const styledLogo = {
   fontFamily: 'Galada',
   fontWeight: 'Bold',
   fontSize: '30px',
-  
-  // color: 'rgb(255, 31, 98)'
 }
 
 export default function Navbar() {
@@ -54,12 +52,23 @@ export default function Navbar() {
           <Typography style={styledLogo} variant="h6" className={classes.title} id="logo">
             Beauty App
           </Typography>
-          <Button color="white">Login</Button>
+          <Button color="white">Log in</Button>
         </Toolbar>
         <PageLoading position="fixed"/>
       </AppBar>
       
-      {/* lower appbar */}     
+      {/* lower appbar */}
+      <nav class="container">
+        <Link style={styledLink} to="/about">Fryzjer</Link>
+        <Link style={styledLink} to="/about">Barber</Link>
+        <Link style={styledLink} to="/about">Paznokcie</Link>
+        <Link style={styledLink} to="/about">Makijaż</Link>
+        <Link style={styledLink} to="/about">Fryzjer</Link>
+        <Link style={styledLink} to="/about">Barber</Link>
+        <Link style={styledLink} to="/about">Paznokcie</Link>
+        <Link style={styledLink} to="/about">Makijaż</Link>
+      </nav>
+      
     </div>
   );
 }

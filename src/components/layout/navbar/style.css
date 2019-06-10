@@ -1,10 +1,10 @@
 nav {
     background-Color:white;
     display:flex;
+    font-family: Roboto;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-weight: bold;
     height:64px;
     margin-top:65px;
     /* color:rgb(255, 31, 98); */
