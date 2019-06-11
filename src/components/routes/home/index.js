@@ -17,7 +17,6 @@ class Home extends React.Component {
             <div style={containerStyle} className="container">
                 <YtBackground />
                 <SearchBox />
-                
             </div>
         )
     }

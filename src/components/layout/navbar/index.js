@@ -34,6 +34,7 @@ const styledLink = {
 
 const styledLogo = {
   marginTop:"10px",
+  marginLeft:"120px",
   fontFamily: 'Galada',
   fontWeight: 'Bold',
   fontSize: '30px',
@@ -51,7 +52,8 @@ export default function Navbar() {
           <Typography style={styledLogo} variant="h6" className={classes.title} id="logo">
             Beauty App
           </Typography>
-          <Button ><Link style={{color:"white", textDecoration:"none"}} to="/login">Log in</Link></Button>
+          <Button ><Link style={{color:"white", textDecoration:"none"}} to="/login">Zarejestruj się</Link></Button>
+          <Button ><Link style={{color:"white", textDecoration:"none"}} to="/signin">Zaloguj się</Link></Button>
         </Toolbar>
         <PageLoading position="fixed"/>
       </AppBar>
