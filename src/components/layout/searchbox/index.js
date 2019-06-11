@@ -11,8 +11,10 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 600,
-    height: 70,
+    width: 400,
+    height: 40,
+    background:"white",
+    color:"white",
   },
   input: {
     marginLeft: 8,
@@ -27,9 +29,9 @@ const useStyles = makeStyles({
 });
 
 const divStyle = {
-  background: "linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)",
-  width:610,
-  height: 80,
+  background: "linear-gradient(to left, #efb5ff, #c8cdff, #aae0ff, #a4efff, #b7f9ff)",
+  width:410,
+  height: 50,
   borderRadius: "5px 5px",
   display: 'flex',
   alignItems: 'center',

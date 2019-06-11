@@ -9,6 +9,7 @@ import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
 import PageLoading from './navbar.loading/index'
 import './style.css'
+import SearchBox from '../searchbox/index'
 
 
 const useStyles = makeStyles(theme => ({
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const styledLink = {
-  color: "black",
+  color: "white",
   textDecoration: "none",
   padding: "30px",
 }
@@ -58,7 +59,7 @@ export default function Navbar() {
       </AppBar>
       
       {/* lower appbar */}
-      <nav class="container">
+      <nav class="container-fluid">
         <Link style={styledLink} to="/about">Fryzjer</Link>
         <Link style={styledLink} to="/about">Barber</Link>
         <Link style={styledLink} to="/about">Paznokcie</Link>

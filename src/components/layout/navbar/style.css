@@ -1,5 +1,5 @@
 nav {
-    background-Color:white;
+    background:linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2);;
     display:flex;
     font-family: Roboto;
     justify-content: center;
