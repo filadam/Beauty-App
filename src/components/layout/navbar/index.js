@@ -53,7 +53,7 @@ export default function Navbar() {
           <Typography style={styledLogo} variant="h6" className={classes.title} id="logo">
             Beauty App
           </Typography>
-          <Button color="white">Log in</Button>
+          <Button ><Link style={{color:"white", textDecoration:"none"}} to="/login">Log in</Link></Button>
         </Toolbar>
         <PageLoading position="fixed"/>
       </AppBar>

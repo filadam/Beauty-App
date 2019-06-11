@@ -13,6 +13,7 @@ const containerStyle = {
 class Home extends React.Component {
     render() {
         return (
+            
             <div style={containerStyle} className="container">
                 <YtBackground />
                 <SearchBox />

@@ -29,13 +29,14 @@ const useStyles = makeStyles({
 });
 
 const divStyle = {
-  background: "linear-gradient(to left, #efb5ff, #c8cdff, #aae0ff, #a4efff, #b7f9ff)",
+  background: "#3D3D3D",
   width:410,
   height: 50,
   borderRadius: "5px 5px",
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  marginTop:"200px"
 }
 export default function SearchBox() {
   const classes = useStyles();
