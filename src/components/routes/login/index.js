@@ -50,7 +50,6 @@ class Login extends React.Component {
 
     componentDidMount() {
         this.setState({ isPending: true });
-        this.props.signIn();
         firebase.auth().onAuthStateChanged(user => {
             this.setState({
                 user,
@@ -154,12 +153,4 @@ class Login extends React.Component {
     }
 }
 
-const mapState = state => ({
-    user: state.user
-  });
-  const mapDispatch = {
-    signIn
-  };
-
-connect(mapState, mapDispatch)(Login);
 export default Login;
