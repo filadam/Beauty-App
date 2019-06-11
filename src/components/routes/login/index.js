@@ -3,13 +3,15 @@ import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import { connect } from "react-redux";
+import signIn from "../../../index"
+
 
 const loginPageStyles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "80vh",
-    background:"linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)",
+    height: "70vh",
 }
 const loginFormStyle = {
 
@@ -48,6 +50,7 @@ class Login extends React.Component {
 
     componentDidMount() {
         this.setState({ isPending: true });
+        this.props.signIn();
         firebase.auth().onAuthStateChanged(user => {
             this.setState({
                 user,
@@ -151,4 +154,12 @@ class Login extends React.Component {
     }
 }
 
+const mapState = state => ({
+    user: state.user
+  });
+  const mapDispatch = {
+    signIn
+  };
+
+connect(mapState, mapDispatch)(Login);
 export default Login;
