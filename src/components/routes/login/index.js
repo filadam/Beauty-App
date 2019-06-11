@@ -1,13 +1,32 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 import * as firebase from "firebase/app";
 import "firebase/auth";
+
 const loginPageStyles = {
-    display:"flex",
+    display: "flex",
     alignItems: "center",
-    justifyContent:"center",
-    height:"100vh",
+    justifyContent: "center",
+    height: "80vh",
+    background:"linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)",
+}
+const loginFormStyle = {
+
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background:"linear-gradient(to left, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)",
+    borderRadius: "5px 5px",
+    
+}
+const loginInputStyle = {
+
+    padding:"10px",
+    margin:"5px",
+    height:50,
+    width:"450px",
+    
 }
 var config = {
     apiKey: "AIzaSyAegmL6Mg2_GtAyV5Htexb6AEzJ69dwDxY",
@@ -97,20 +116,22 @@ class Login extends React.Component {
               </button>
                         </div>
                     ) : (
-                            <form onSubmit={this.handleSubmit}>
+                            <form style={loginFormStyle} onSubmit={this.handleSubmit}>
                                 <input
+                                style={loginInputStyle}
                                     type="email"
-                                    placeholder="Wprowadz email"
+                                    placeholder="E-Mail"
                                     onChange={this.handleChange}
                                     disabled={this.state.isPending}
                                 />
                                 <input
+                                style={loginInputStyle}
                                     type="password"
-                                    placeholder="Twoje haslo"
+                                    placeholder="Hasło"
                                     onChange={this.handleChange}
                                     disabled={this.state.isPending}
                                 />
-                                <button disabled={this.state.isPending}>Go!</button>
+                                <Button style={{padding:"11px", marginRight:"5px", backgroundColor:"inherit", border:"none", }} disabled={this.state.isPending}>LOG IN</Button>
                             </form>
                         )}
                     <Route

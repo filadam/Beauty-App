@@ -5,11 +5,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import SimpleMenu from './navbar.button/index'
-import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
 import PageLoading from './navbar.loading/index'
 import './style.css'
-import SearchBox from '../searchbox/index'
 
 
 const useStyles = makeStyles(theme => ({
