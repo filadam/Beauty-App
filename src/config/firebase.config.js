@@ -11,6 +11,5 @@ import "firebase/auth";
     appId: "1:351211230753:web:2e7de9f23fea8b19"
   }
 
-
   const Fire = firebase.initializeApp(config);
   export default Fire;
