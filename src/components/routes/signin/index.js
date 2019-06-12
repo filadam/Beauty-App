@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 import "firebase/auth";
 import Fire from '../../../config/firebase.config'
 
@@ -10,10 +10,6 @@ const loginPageStyles = {
     height: "80vh",
 }
 const loginFormStyle = {
-
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
     background: "linear-gradient(to left, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)",
     borderRadius: "5px 5px",
 
@@ -24,11 +20,15 @@ const loginInputStyle = {
     margin: "5px",
     height: 50,
     width: "450px",
-
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
 }
 
-class Login extends React.Component {
+class SignIn extends React.Component {
     state = {
+        name: "",
+        surname:"",
         email: "",
         password: "",
         isPending: true
@@ -46,7 +46,6 @@ class Login extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        //console.log(this.state);
         this.setState({ isPending: true });
         Fire
             .auth()
@@ -107,6 +106,20 @@ class Login extends React.Component {
                             <form style={loginFormStyle} onSubmit={this.handleSubmit}>
                                 <input
                                     style={loginInputStyle}
+                                    type="name"
+                                    placeholder="Imię"
+                                    onChange={this.handleChange}
+                                    disabled={this.state.isPending}
+                                />
+                                <input
+                                    style={loginInputStyle}
+                                    type="name"
+                                    placeholder="Nazwisko"
+                                    onChange={this.handleChange}
+                                    disabled={this.state.isPending}
+                                />
+                                <input
+                                    style={loginInputStyle}
                                     type="email"
                                     placeholder="E-Mail"
                                     onChange={this.handleChange}
@@ -135,7 +148,7 @@ class Login extends React.Component {
                                     }}
                                     disabled={this.state.isPending}
                                 >
-                                    ZALOGUJ SIĘ
+                                    Zarejestruj się
                                     </button>
                             </form>
                         )}
@@ -156,4 +169,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default SignIn;
