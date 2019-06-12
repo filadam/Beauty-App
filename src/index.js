@@ -13,6 +13,7 @@ import "firebase/auth";
 
 ReactDOM.render(
   <Router>
+    <Route exact path="/" component={UserApp} />
     <Route exact path="/userapp" component={UserApp} />
     <Route exact path="userapp/home" component={UserApp} />
     <Route exact path="compapp/home" component={UserApp} />
