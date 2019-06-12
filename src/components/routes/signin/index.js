@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 import "firebase/auth";
 import Fire from '../../../config/firebase.config'
+import { flexbox } from "@material-ui/system";
+import { FaCentercode } from "react-icons/fa";
 
 const loginPageStyles = {
     display: "flex",
@@ -15,7 +17,7 @@ const loginFormStyle = {
 
 }
 const loginInputStyle = {
-    border:"none",
+    border: "none",
     padding: "10px",
     margin: "5px",
     height: 50,
@@ -28,7 +30,7 @@ const loginInputStyle = {
 class SignIn extends React.Component {
     state = {
         name: "",
-        surname:"",
+        surname: "",
         email: "",
         password: "",
         isPending: true
@@ -50,20 +52,9 @@ class SignIn extends React.Component {
         Fire
             .auth()
             .createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .catch(error => {
-                console.log(error);
-                if (error.code === "auth/email-already-in-use") {
-                    Fire
-                        .auth()
-                        .signInWithEmailAndPassword(this.state.email, this.state.password)
-                        .catch(function (error) {
-                            alert(error.message);
-                            this.setState({ isPending: false });
-                        });
-                } else {
-                    alert(error.message);
-                    this.setState({ isPending: false });
-                }
+            .catch(function (error) {
+                alert(error.message);
+                this.setState({ isPending: false });
             });
     };
 
@@ -73,34 +64,33 @@ class SignIn extends React.Component {
         });
     };
 
-    handleLogout = () => {
-        this.setState({ isPending: true });
-        Fire
-            .auth()
-            .signOut()
-            .then(function () {
-                alert("Wylogowano...");
-            })
-            .catch(function (error) {
-                alert("Nie wylogowano...");
-                this.setState({ isPending: false });
-            });
-    };
-
     render() {
         return (
             <BrowserRouter >
                 <div style={loginPageStyles} className="App">
                     {this.state.user ? (
                         <div>
-                            <h2>Zalogowany</h2>
-                            {/* <pre>{JSON.stringify(this.state.user, null, 2)}</pre> */}
+                            <h2>Twoje konto zostało utworzone</h2>
                             <button
-                                onClick={this.handleLogout}
-                                disabled={this.state.isPending}
-                            >
-                                Wyloguj
-              </button>
+                                    style={{
+                                        padding: "11px",
+                                        marginLeft:"100px",
+                                        backgroundColor: "inherit",
+                                        border: "none",
+                                        color: "white",
+                                        fontSize: "0.875rem",
+                                        fontFamily: "'Roboto'",
+                                        fontWeight: 500,
+                                        lineHeight: 1.75,
+                                        letterSpacing: "0.02857em",
+                                        textTransform: "uppercase",
+                                        borderRadius: "5px 5px",
+                                        background:"linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)"
+                                    }}
+                                    disabled={this.state.isPending}
+                                >
+                                    <Link style={{color:"white", textDecoration:"none"}} to="/">Przejdź na stronę główną</Link>
+                                    </button>
                         </div>
                     ) : (
                             <form style={loginFormStyle} onSubmit={this.handleSubmit}>
@@ -113,7 +103,7 @@ class SignIn extends React.Component {
                                 />
                                 <input
                                     style={loginInputStyle}
-                                    type="name"
+                                    type="surname"
                                     placeholder="Nazwisko"
                                     onChange={this.handleChange}
                                     disabled={this.state.isPending}
@@ -152,17 +142,6 @@ class SignIn extends React.Component {
                                     </button>
                             </form>
                         )}
-                    <Route
-                        path="/Home"
-                        component={() => (
-                            <div>
-                                {!this.state.user && !this.state.isPending && (
-                                    <Redirect to="/" />
-                                )}
-
-                            </div>
-                        )}
-                    />
                 </div>
             </BrowserRouter>
         );
