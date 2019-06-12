@@ -14,7 +14,8 @@ import "firebase/auth";
 ReactDOM.render(
   <Router>
     <Route exact path="/userapp" component={UserApp} />
-    <Route exact path="/home" component={UserApp} />
+    <Route exact path="userapp/home" component={UserApp} />
+    <Route exact path="compapp/home" component={UserApp} />
     <Route exact path="/compapp" component={CompApp} />
     </Router>,
   document.getElementById('root')

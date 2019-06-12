@@ -4,6 +4,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link, Redirect } from 'react-router-dom'
 
 const styledIcon = {
     color:"white",
@@ -32,8 +33,8 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Przeglądaj jako użytkownik</MenuItem>
-        <MenuItem onClick={handleClose}>Przeglądaj jako firma</MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/userapp/">Przeglądaj jako użytkownik</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/compapp/">Przeglądaj jako firma</Link></MenuItem>
       </Menu>
     </div>
   );

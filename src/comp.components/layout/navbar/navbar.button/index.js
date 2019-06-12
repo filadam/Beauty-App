@@ -33,8 +33,8 @@ export default function CompSimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}><Link to="/userapp/home">Przeglądaj jako użytkownik</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/compapp/home">Przeglądaj jako firma</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/userapp/">Przeglądaj jako użytkownik</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/compapp/">Przeglądaj jako firma</Link></MenuItem>
       </Menu>
     </div>
   );
