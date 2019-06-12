@@ -1,5 +1,5 @@
 nav#compnav {
-    background:linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #ff0000);
+    background: linear-gradient(to right, #ffd6f4, #ffbcda, #ffa3ab, #ff946e, #ff941f);
     display:flex;
     font-family: Roboto;
     justify-content: center;
@@ -8,6 +8,7 @@ nav#compnav {
     height:64px;
     margin-top:65px;
 }
+
 /* #logo {
     background-image: url('https://media-public.canva.com/MAC6nELjDIw/1/thumbnail_large.jpg');
     background-clip: text;
@@ -20,8 +21,8 @@ color: transparent
 .MuiButton-label {
     color:white;
 }
-.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters {
-    background: linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2);
+#compbar .MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters {
+    background: linear-gradient(to right, #ffd6f4, #ffbcda, #ffa3ab, #ff946e, #ff941f);
     box-shadow: none;
 }
 /* font-family: 'Indie Flower', cursive; */

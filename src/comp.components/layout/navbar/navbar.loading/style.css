@@ -1,3 +1,3 @@
-.MuiLinearProgress-barColorSecondary {
-    background:linear-gradient(to left, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2);
+#comploader .MuiLinearProgress-barColorSecondary {
+    background:linear-gradient(to left, #ffd6f4, #ffbcda, #ffa3ab, #ff946e, #ff941f);
 }

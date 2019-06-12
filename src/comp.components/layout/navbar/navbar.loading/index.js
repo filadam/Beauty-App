@@ -7,7 +7,7 @@ const divStyle = {
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    colorSecondary: 'linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)',
+    colorSecondary: 'linear-gradient(to right, #ffd6f4, #ffbcda, #ffa3ab, #ff946e, #ff941f);',
   },
   colorSecondary: {
     Color: '#b2dfdb',
@@ -37,7 +37,7 @@ export default function CompPageLoading() {
 
   return (
     <div style={divStyle} className={classes.root}>
-      <LinearProgress style={{background: 'white'}} color="secondary" variant="determinate" value={completed} />
+      <LinearProgress id="comploader" style={{background: 'white'}} color="secondary" variant="determinate" value={completed} />
     </div>
   );
 }

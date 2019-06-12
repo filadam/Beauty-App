@@ -44,7 +44,7 @@ export default function CompNavbar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div id="compbar" className={classes.root}>
       
       <AppBar position="fixed">
               <Toolbar >
