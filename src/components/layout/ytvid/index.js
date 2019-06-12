@@ -16,7 +16,7 @@ const videoStyles = {
 class YtBackground extends React.Component {
   render() {
     return(
-            <div id="theVideo">
+            <div class id="theVideo">
                 <video style={videoStyles} id="samp" autoPlay muted loop>
                     <source src = {Video} type="video/mp4">
                     </source>

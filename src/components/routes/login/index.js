@@ -19,7 +19,7 @@ const loginFormStyle = {
 
 }
 const loginInputStyle = {
-    border:"none",
+    border: "none",
     padding: "10px",
     margin: "5px",
     height: 50,
@@ -94,14 +94,30 @@ class Login extends React.Component {
                 <div style={loginPageStyles} className="App">
                     {this.state.user ? (
                         <div>
-                            <h2>Zalogowany</h2>
+                            <h2>Jesteś już zalogowany</h2>
                             {/* <pre>{JSON.stringify(this.state.user, null, 2)}</pre> */}
                             <button
                                 onClick={this.handleLogout}
                                 disabled={this.state.isPending}
+                                style={{
+                                    padding: "11px",
+                                    marginLeft: "100px",
+                                    backgroundColor: "inherit",
+                                    border: "none",
+                                    color: "white",
+                                    fontSize: "0.875rem",
+                                    fontFamily: "'Roboto'",
+                                    fontWeight: 500,
+                                    lineHeight: 1.75,
+                                    letterSpacing: "0.02857em",
+                                    textTransform: "uppercase",
+                                    borderRadius: "5px 5px",
+                                    background: "linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)"
+                                }}
+                                disabled={this.state.isPending}
                             >
-                                Wyloguj
-              </button>
+                                Wyloguj się
+                                </button>
                         </div>
                     ) : (
                             <form style={loginFormStyle} onSubmit={this.handleSubmit}>
