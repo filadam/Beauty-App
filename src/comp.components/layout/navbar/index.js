@@ -60,14 +60,11 @@ export default function CompNavbar() {
       
       {/* lower appbar */}
       <nav id="compnav" class="container-fluid">
-        <Link style={styledLink} to="/about">Fryzjer</Link>
-        <Link style={styledLink} to="/about">Barber</Link>
-        <Link style={styledLink} to="/about">Paznokcie</Link>
-        <Link style={styledLink} to="/about">Makijaż</Link>
-        <Link style={styledLink} to="/about">Fryzjer</Link>
-        <Link style={styledLink} to="/about">Barber</Link>
-        <Link style={styledLink} to="/about">Paznokcie</Link>
-        <Link style={styledLink} to="/about">Makijaż</Link>
+        <Link style={styledLink} to="/about">Kalendarz</Link>
+        <Link style={styledLink} to="/about">Kalendarz</Link>
+        <Link style={styledLink} to="/about">Kalendarz</Link>
+        <Link style={styledLink} to="/about">Kalendarz</Link>
+        <Link style={styledLink} to="/about">Kalendarz</Link>
       </nav>
       
     </div>
