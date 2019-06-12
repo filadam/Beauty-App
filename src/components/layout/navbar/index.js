@@ -50,7 +50,7 @@ export default function Navbar() {
               <Toolbar >
           <SimpleMenu />
           <Typography style={styledLogo} variant="h6" className={classes.title} id="logo">
-            Beauty App
+            <Link style={{color:"white", textDecoration:"none"}} to="/home">Beauty App</Link>
           </Typography>
           <Button ><Link style={{color:"white", textDecoration:"none"}} to="/signin">Zarejestruj się</Link></Button>
           <Button ><Link style={{color:"white", textDecoration:"none"}} to="/login">Zaloguj się</Link></Button>
