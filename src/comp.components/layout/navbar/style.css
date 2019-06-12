@@ -1,0 +1,27 @@
+nav#compnav {
+    background:linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #ff0000);
+    display:flex;
+    font-family: Roboto;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height:64px;
+    margin-top:65px;
+}
+/* #logo {
+    background-image: url('https://media-public.canva.com/MAC6nELjDIw/1/thumbnail_large.jpg');
+    background-clip: text;
+-webkit-background-clip: text;
+color: transparent
+} */
+.MuiPaper-elevation4 {
+    box-shadow: none!important;
+}
+.MuiButton-label {
+    color:white;
+}
+.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters {
+    background: linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2);
+    box-shadow: none;
+}
+/* font-family: 'Indie Flower', cursive; */
