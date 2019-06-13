@@ -33,8 +33,8 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}><Link to="/userapp/">Przeglądaj jako użytkownik</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/compapp/">Przeglądaj jako firma</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/userapp/">Panel użytkownika</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/compapp/">Panel firmowy</Link></MenuItem>
       </Menu>
     </div>
   );

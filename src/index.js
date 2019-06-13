@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './index.css';
 // import Home from './components/routes/home/index'
 // import Footer from './components/layout/footer/index'
@@ -13,11 +13,11 @@ import "firebase/auth";
 
 ReactDOM.render(
   <Router>
-    <Route exact path="/" component={UserApp} />
+    <Redirect to="/UserApp" />
     <Route exact path="/userapp" component={UserApp} />
     <Route exact path="userapp/home" component={UserApp} />
-    <Route exact path="compapp/home" component={UserApp} />
-    <Route exact path="/compapp" component={CompApp} />
+    {/* <Route exact path="compapp/home" component={UserApp} /> */}
+    {/* <Route exact path="/compapp" component={CompApp} /> */}
     </Router>,
   document.getElementById('root')
 );

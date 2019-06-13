@@ -1,151 +1,87 @@
-import React from "react";
-import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
-import "firebase/auth";
-import Fire from '../../../config/firebase.config'
-import { flexbox } from "@material-ui/system";
-import { FaCentercode } from "react-icons/fa";
+import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import SwipeableViews from 'react-swipeable-views';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import { green } from '@material-ui/core/colors';
+import SignUser from './signUser'
+import SignComp from './signComp'
 
-const loginPageStyles = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "80vh",
-}
-const loginFormStyle = {
-    background: "linear-gradient(to left, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)",
-    borderRadius: "5px 5px",
+function TabContainer(props) {
+  const { children, dir } = props;
 
-}
-const loginInputStyle = {
-    border: "none",
-    padding: "10px",
-    margin: "5px",
-    height: 50,
-    width: "450px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+  return (
+    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+      {children}
+    </Typography>
+  );
 }
 
-class SignIn extends React.Component {
-    state = {
-        name: "",
-        surname: "",
-        email: "",
-        password: "",
-        isPending: true
-    };
+TabContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+  dir: PropTypes.string.isRequired,
+};
 
-    componentDidMount() {
-        this.setState({ isPending: true });
-        Fire.auth().onAuthStateChanged(user => {
-            this.setState({
-                user,
-                isPending: false
-            });
-        });
-    }
+const useStyles = makeStyles(theme => ({
+  root: {
+    backgroundColor: theme.palette.background.paper,
+    width: 500,
+    position: 'relative',
+    minHeight: 200,
+  },
+  fab: {
+    position: 'absolute',
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
+  },
+  fabGreen: {
+    color: theme.palette.common.white,
+    backgroundColor: green[500],
+    '&:hover': {
+      backgroundColor: green[600],
+    },
+  },
+}));
 
-    handleSubmit = e => {
-        e.preventDefault();
-        this.setState({ isPending: true });
-        Fire
-            .auth()
-            .createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .catch(function (error) {
-                alert(error.message);
-                this.setState({ isPending: false });
-            });
-    };
+export default function FloatingActionButtonZoom() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
 
-    handleChange = e => {
-        this.setState({
-            [e.target.type]: e.target.value
-        });
-    };
+  function handleChange(event, newValue) {
+    setValue(newValue);
+  }
 
-    render() {
-        return (
-            <BrowserRouter >
-                <div style={loginPageStyles} className="App">
-                    {this.state.user ? (
-                        <div>
-                            <h2>Twoje konto zostało utworzone</h2>
-                            <button
-                                    style={{
-                                        padding: "11px",
-                                        marginLeft:"100px",
-                                        backgroundColor: "inherit",
-                                        border: "none",
-                                        color: "white",
-                                        fontSize: "0.875rem",
-                                        fontFamily: "'Roboto'",
-                                        fontWeight: 500,
-                                        lineHeight: 1.75,
-                                        letterSpacing: "0.02857em",
-                                        textTransform: "uppercase",
-                                        borderRadius: "5px 5px",
-                                        background:"linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)"
-                                    }}
-                                    disabled={this.state.isPending}
-                                >
-                                    <Link style={{color:"white", textDecoration:"none"}} to="/">Przejdź na stronę główną</Link>
-                                    </button>
-                        </div>
-                    ) : (
-                            <form style={loginFormStyle} onSubmit={this.handleSubmit}>
-                                <input
-                                    style={loginInputStyle}
-                                    type="name"
-                                    placeholder="Imię"
-                                    onChange={this.handleChange}
-                                    disabled={this.state.isPending}
-                                />
-                                <input
-                                    style={loginInputStyle}
-                                    type="surname"
-                                    placeholder="Nazwisko"
-                                    onChange={this.handleChange}
-                                    disabled={this.state.isPending}
-                                />
-                                <input
-                                    style={loginInputStyle}
-                                    type="email"
-                                    placeholder="E-Mail"
-                                    onChange={this.handleChange}
-                                    disabled={this.state.isPending}
-                                />
-                                <input
-                                    style={loginInputStyle}
-                                    type="password"
-                                    placeholder="Hasło"
-                                    onChange={this.handleChange}
-                                    disabled={this.state.isPending}
-                                />
-                                <button
-                                    style={{
-                                        padding: "11px",
-                                        marginRight: "5px",
-                                        backgroundColor: "inherit",
-                                        border: "none",
-                                        color: "white",
-                                        fontSize: "0.875rem",
-                                        fontFamily: "'Roboto'",
-                                        fontWeight: 500,
-                                        lineHeight: 1.75,
-                                        letterSpacing: "0.02857em",
-                                        textTransform: "uppercase"
-                                    }}
-                                    disabled={this.state.isPending}
-                                >
-                                    Zarejestruj się
-                                    </button>
-                            </form>
-                        )}
-                </div>
-            </BrowserRouter>
-        );
-    }
+  function handleChangeIndex(index) {
+    setValue(index);
+  }
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="fullWidth"
+        >
+          <Tab label="Zarejestruj Użytkownika" />
+          <Tab label="Zarejestruj Firmę" />
+        </Tabs>
+      </AppBar>
+      <SwipeableViews
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        index={value}
+        onChangeIndex={handleChangeIndex}
+      >
+        <TabContainer dir={theme.direction}><SignUser/></TabContainer>
+        <TabContainer dir={theme.direction}><SignComp/></TabContainer>
+      </SwipeableViews>
+    </div>
+  );
 }
-
-export default SignIn;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './index.css';
 import CompHome from './comp.components/routes/home/index'
 import CompFooter from './comp.components/layout/footer/index'
