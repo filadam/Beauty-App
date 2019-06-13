@@ -89,7 +89,6 @@ class Login extends React.Component {
 
     render() {
         return (
-            <BrowserRouter >
                 <div style={loginPageStyles} className="App">
                     {this.state.user ? (
                         <div>
@@ -187,7 +186,6 @@ class Login extends React.Component {
                         )}
 
                 </div>
-            </BrowserRouter>
         );
     }
 }
