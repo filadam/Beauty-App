@@ -7,6 +7,13 @@ nav {
     text-decoration: none;
     height:64px;
     margin-top:65px;
+    font-Family: "Roboto";
+    font-Weight: 500;
+    line-Height: 1.75;
+    border-Radius: 4px;
+    letter-Spacing: 0.02857em;
+    text-Transform: uppercase;
+    font-Size: 0.875rem;
 }
 /* #logo {
     background-image: url('https://media-public.canva.com/MAC6nELjDIw/1/thumbnail_large.jpg');
