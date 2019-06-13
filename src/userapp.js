@@ -7,6 +7,7 @@ import Footer from './components/layout/footer/index'
 import Login from './components/routes/login/index'
 import Navbar from './components/layout/navbar/index'
 import SignIn from './components/routes/signin/index'
+import UserPanel from './components/routes/userpanel/index'
 import "firebase/auth";
 
 class UserApp extends React.Component {
@@ -18,6 +19,8 @@ class UserApp extends React.Component {
                 <Route exact path='/home' component={Home} />
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/signin' component={SignIn} />
+                <Route exact path='/userpanel' component={UserPanel} />
+
                 <Footer />
             </Router>
         )
