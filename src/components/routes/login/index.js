@@ -78,9 +78,6 @@ class Login extends React.Component {
         Fire
             .auth()
             .signOut()
-            .then(function () {
-                alert("Wylogowano...");
-            })
             .catch(function (error) {
                 alert("Nie wylogowano...");
                 this.setState({ isPending: false });
