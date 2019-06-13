@@ -15,7 +15,7 @@ function TabContainer(props) {
   const { children, dir } = props;
 
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+    <Typography component="div" dir={dir} style={{ padding: 2 * 3 }}>
       {children}
     </Typography>
   );
@@ -29,24 +29,17 @@ TabContainer.propTypes = {
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: "100%",
     position: 'relative',
     minHeight: 200,
-  },
-  fab: {
-    position: 'absolute',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-  fabGreen: {
-    color: theme.palette.common.white,
-    backgroundColor: green[500],
-    '&:hover': {
-      backgroundColor: green[600],
-    },
+    justifyContent:"center",
   },
 }));
-
+const appBarStyles = {
+  display:"flex",
+  justifyContent:"center",
+  alignItems:"center",
+}
 export default function FloatingActionButtonZoom() {
   const classes = useStyles();
   const theme = useTheme();
