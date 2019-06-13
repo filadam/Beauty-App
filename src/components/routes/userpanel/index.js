@@ -9,7 +9,7 @@ const styledContainer = {
 }
 const styledUserContainer = {
     background: "#E9E9E9",
-    width: "70%",
+    width: "40%",
     height: "700px",
     borderRadius: "20px 20px",
     display: "grid",
@@ -40,10 +40,10 @@ const gradientDiv = {
     height: "220px",
     width: "220px",
     marginLeft: "150px",
-    marginTop:"40px",
-    display:'flex',
-    alignItems:"center",
-    justifyContent:"center",
+    marginTop: "40px",
+    display: 'flex',
+    alignItems: "center",
+    justifyContent: "center",
     // marginLeft: "150px",
 }
 

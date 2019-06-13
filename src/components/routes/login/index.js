@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Redirect, Link } from "react-router-dom";
 import "firebase/auth";
 import Fire from '../../../config/firebase.config'
+import UserPanel from "../userpanel";
 
 const loginPageStyles = {
     display: "flex",
@@ -24,9 +25,7 @@ const loginInputStyle = {
     margin: "5px",
     height: 50,
     width: "450px",
-
 }
-
 class Login extends React.Component {
     state = {
         email: "",
@@ -94,13 +93,45 @@ class Login extends React.Component {
                 <div style={loginPageStyles} className="App">
                     {this.state.user ? (
                         <div>
-                            <h2>Jesteś już zalogowany</h2>
+                            <h2
+                                style={{
+                                    marginLeft: "45px",
+                                    fontSize: "1.5rem",
+                                    fontFamily: "'Roboto'",
+                                    fontWeight: 500,
+                                    lineHeight: 1.75,
+                                    letterSpacing: "0.02857em",
+                                    textTransform: "uppercase"
+                                }}
+                            >
+                                Jesteś zalogowany
+                                </h2>
+                            <button
+                                style={{
+                                    padding: "11px",
+                                    backgroundColor: "inherit",
+                                    border: "none",
+                                    color: "white",
+                                    fontSize: "0.875rem",
+                                    fontFamily: "'Roboto'",
+                                    fontWeight: 500,
+                                    lineHeight: 1.75,
+                                    letterSpacing: "0.02857em",
+                                    textTransform: "uppercase",
+                                    borderRadius: "5px 5px",
+                                    background: "linear-gradient(to right, #acffff, #8ef7f2, #6eefe4, #4ae7d4, #0adec2)"
+                                }}
+                            >
+                                <Link style={{ color: "white", textDecoration: "none" }} to="/userpanel/">
+                                    Przejdź do panelu
+                                    </Link>
+                            </button>
                             <button
                                 onClick={this.handleLogout}
                                 disabled={this.state.isPending}
                                 style={{
                                     padding: "11px",
-                                    marginLeft: "100px",
+                                    marginLeft: "80px",
                                     backgroundColor: "inherit",
                                     border: "none",
                                     color: "white",
@@ -154,17 +185,7 @@ class Login extends React.Component {
                                     </button>
                             </form>
                         )}
-                    <Route
-                        path="/Home"
-                        component={() => (
-                            <div>
-                                {!this.state.user && !this.state.isPending && (
-                                    <Redirect to="/" />
-                                )}
 
-                            </div>
-                        )}
-                    />
                 </div>
             </BrowserRouter>
         );

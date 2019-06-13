@@ -69,11 +69,19 @@ class SignUser extends React.Component {
                 <div style={loginPageStyles} className="App">
                     {this.state.user ? (
                         <div>
-                            <h2>Twoje konto zostało utworzone</h2>
+                            <h2 style={{
+                                marginLeft: "45px",
+                                fontSize: "1.5rem",
+                                fontFamily: "'Roboto'",
+                                fontWeight: 500,
+                                lineHeight: 1.75,
+                                letterSpacing: "0.02857em",
+                                textTransform: "uppercase"
+                            }}>Twoje konto zostało utworzone</h2>
                             <button
                                 style={{
                                     padding: "11px",
-                                    marginLeft: "100px",
+                                    marginLeft: "140px",
                                     backgroundColor: "inherit",
                                     border: "none",
                                     color: "white",

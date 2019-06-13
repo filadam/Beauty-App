@@ -2,3 +2,7 @@ p {
     margin-bottom:-20px;
     margin-left:5px;
 }
+
+::placeholder {
+    text-transform: capitalize;
+}
