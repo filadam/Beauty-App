@@ -66,7 +66,6 @@ class SignComp extends React.Component {
 
     render() {
         return (
-            <BrowserRouter >
                 <div style={loginPageStyles} className="App">
                     {this.state.user ? (
                         <div>
@@ -82,7 +81,7 @@ class SignComp extends React.Component {
                             <button
                                 style={{
                                     padding: "11px",
-                                    marginLeft: "100px",
+                                    marginLeft: "140px",
                                     backgroundColor: "inherit",
                                     border: "none",
                                     color: "white",
@@ -97,7 +96,7 @@ class SignComp extends React.Component {
                                 }}
                                 disabled={this.state.isPending}
                             >
-                                <Link style={{ color: "white", textDecoration: "none" }} to="/">Przejdź na stronę główną</Link>
+                                <Link style={{ color: "white", textDecoration: "none" }} to="/userapp">Przejdź na stronę główną</Link>
                             </button>
                         </div>
                     ) : (
@@ -151,7 +150,6 @@ class SignComp extends React.Component {
                             </form>
                         )}
                 </div>
-            </BrowserRouter>
         );
     }
 }

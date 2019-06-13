@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "firebase/auth";
 import Fire from '../../../config/firebase.config'
 
@@ -65,7 +65,6 @@ class SignUser extends React.Component {
 
     render() {
         return (
-            <BrowserRouter >
                 <div style={loginPageStyles} className="App">
                     {this.state.user ? (
                         <div>
@@ -96,7 +95,7 @@ class SignUser extends React.Component {
                                 }}
                                 disabled={this.state.isPending}
                             >
-                                <Link style={{ color: "white", textDecoration: "none" }} to="/">Przejdź na stronę główną</Link>
+                                <Link style={{ color: "white", textDecoration: "none" }} to="/userapp">Przejdź na stronę główną</Link>
                             </button>
                         </div>
                     ) : (
@@ -157,7 +156,6 @@ class SignUser extends React.Component {
                             </form>
                         )}
                 </div>
-            </BrowserRouter>
         );
     }
 }
