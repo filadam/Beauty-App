@@ -27,9 +27,10 @@ const loginInputStyle = {
 
 class SignUser extends React.Component {
     state = {
-        name: "",
-        surname: "",
+        companyname: "",
+        nip: "",
         email: "",
+        adres: "",
         password: "",
         isPending: true
     };
@@ -94,14 +95,14 @@ class SignUser extends React.Component {
                             <form style={loginFormStyle} onSubmit={this.handleSubmit}>
                                 <input
                                     style={loginInputStyle}
-                                    type="name"
+                                    type="companyname"
                                     placeholder="Nazwa Firmy"
                                     onChange={this.handleChange}
                                     disabled={this.state.isPending}
                                 />
                                 <input
                                     style={loginInputStyle}
-                                    type="surname"
+                                    type="nip"
                                     placeholder="NIP"
                                     onChange={this.handleChange}
                                     disabled={this.state.isPending}
@@ -115,7 +116,7 @@ class SignUser extends React.Component {
                                 />
                                 <input
                                     style={loginInputStyle}
-                                    type="password"
+                                    type="adres"
                                     placeholder="Adres"
                                     onChange={this.handleChange}
                                     disabled={this.state.isPending}
